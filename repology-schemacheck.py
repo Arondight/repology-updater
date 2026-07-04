@@ -186,6 +186,7 @@ rulesets = families + [
     'nix_name',
     'nix_no_name',
     'openeuler',
+    'openkylin',
     'packman',
     'parabola',
     'pardus',
