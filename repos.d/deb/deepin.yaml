@@ -10,7 +10,7 @@
   family: debuntu
   ruleset: [ debuntu, deepin ]
   color: '949393'
-  minpackages: 28000
+  minpackages: 22000
   sources:
     {% for sub in ['contrib', 'main', 'non-free'] %}
     - name: {{sub}}
@@ -43,6 +43,35 @@
       fetcher:
         class: FileFetcher
         url: 'https://community-packages.deepin.com/deepin/beige/dists/beige/{{sub}}/source/Sources.gz'
+        compression: gz
+      parser:
+        class: DebianSourcesParser
+      subrepo: {{sub}}
+    {% endfor %}
+  repolinks:
+    - desc: deepin home
+      url: https://www.deepin.org/
+    - desc: deepin open build service instance
+      url: https://build.deepin.com/
+  packagelinks:
+    - type: PACKAGE_SOURCES
+      url: 'https://github.com/deepin-community/{srcname}'
+  groups: [ all, production, deepin ]
+
+- name: deepin_25
+  type: repository
+  desc: deepin 25
+  statsgroup: Debian+derivs
+  family: debuntu
+  ruleset: [ debuntu, deepin ]
+  color: '949393'
+  minpackages: 24000
+  sources:
+    {% for sub in ['main', 'community', 'commercial'] %}
+    - name: {{sub}}
+      fetcher:
+        class: FileFetcher
+        url: 'https://community-packages.deepin.com/beige/dists/crimson/{{sub}}/source/Sources.gz'
         compression: gz
       parser:
         class: DebianSourcesParser
