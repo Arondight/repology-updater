@@ -8,7 +8,7 @@
   desc: Ubuntu {{major}}.{{minor}}
   statsgroup: Debian+derivs
   family: debuntu
-  ruleset: [debuntu, ubuntu]
+  ruleset: [debuntu, ubuntu{% if codename == 'resolute' %}, ubuntu_broken_homepages{% endif %}]
   color: 'e95420'
   {% if valid_till %}
   valid_till: {{ valid_till }}
