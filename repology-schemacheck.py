@@ -28,6 +28,7 @@ from repology.yamlloader import YamlConfig
 
 families = [
     'adelie',
+    'aerynos',
     'aix',
     'alpine',
     'anitya',
@@ -115,7 +116,6 @@ families = [
     'salix',
     'sclo',
     'scoop',
-    'serpentos',
     'sisyphus',
     'slackbuilds',
     'spack',
