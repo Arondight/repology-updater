@@ -27,7 +27,7 @@ class SerenityOsJsonParser(Parser):
         for pkgdata in iter_json_list(path, (None, )):
             with factory.begin() as pkg:
                 pkg.add_name(pkgdata['id'], NameType.GENERIC_SRC_NAME)
-                pkg.set_version(pkgdata['version'] or "0")
+                pkg.set_version(pkgdata['version'])
                 pkg.set_summary(pkgdata['description'])
                 pkg.add_categories(pkgdata['category'])
                 if (license := pkgdata.get('license')) is not None:
