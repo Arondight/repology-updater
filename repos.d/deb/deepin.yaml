@@ -38,7 +38,6 @@
   ruleset: [ debuntu, deepin ]
   color: '949393'
   minpackages: 8000
-  update_period: 1w
   sources:
     {% for sub in ['main', 'community', 'commercial'] %}
     - name: {{sub}}
